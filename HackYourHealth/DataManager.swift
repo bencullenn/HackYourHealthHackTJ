@@ -8,6 +8,11 @@
 
 import Foundation
 
+public enum Gender: Int {
+    case male
+    case female
+}
+
 public class DataManager {
     public static let shared = DataManager()
     private init(){}
@@ -15,7 +20,7 @@ public class DataManager {
     public var weight: Double?
     public var height: Double?
     public var age: Double?
-    public var gender: String?
+    public var gender: Gender?
     public var restingHeartRate : Double?
     public var bloodPressure: Double?
     public var calorieIntake: Double?
