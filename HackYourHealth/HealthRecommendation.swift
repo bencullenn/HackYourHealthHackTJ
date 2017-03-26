@@ -15,7 +15,7 @@ public struct HealthRecommendation {
     public let higherValueIsUnhealthy: Bool
 
     ///decides whether to recommend a health improvment
-    func shouldRecommendHealthImprovement(currentHealthValue:Double) -> Bool {
+    func shouldRecommendHealthImprovement(currentHealthValue: Double) -> Bool {
         return higherValueIsUnhealthy
             ? healthyValue <= currentHealthValue
             : healthyValue >= currentHealthValue
@@ -23,5 +23,12 @@ public struct HealthRecommendation {
 }
 
 extension HealthRecommendation {
+    static func recommended(for currentHealthValue: Double) -> [HealthRecommendation] {
+        return HealthRecommendation.all.filter {
+            $0.shouldRecommendHealthImprovement(currentHealthValue: currentHealthValue)
+        }
+    }
+    static let all: [HealthRecommendation] = [.fake]
     static let fake = HealthRecommendation(title: "Fake Recommendation", healthyValue: 0, summary: "Lorem Ipsum", higherValueIsUnhealthy: true)
+
 }
