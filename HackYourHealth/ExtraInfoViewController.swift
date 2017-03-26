@@ -10,7 +10,7 @@ import UIKit
 
 class ExtraInfoViewController: UIViewController {
     @IBOutlet var restingHeartRateField: UITextField!
-    @IBOutlet var bloodPressureField: UITextField!
+    @IBOutlet var activitySelector: UITextField!
     @IBOutlet var calorieIntakeField: UITextField!
 
     
@@ -22,7 +22,7 @@ class ExtraInfoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         DataManager.shared.restingHeartRate = Double(restingHeartRateField.text!)
-        DataManager.shared.bloodPressure = Double(bloodPressureField.text!)
+        
         DataManager.shared.calorieIntake = Double(calorieIntakeField.text!)
         //if segue.identifier == ResultViewController, let vc = //segue.destination as ResultViewController {
         

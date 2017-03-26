@@ -17,6 +17,6 @@ public class DataManager {
     public var age: Double?
     public var gender: String?
     public var restingHeartRate : Double?
-    public var bloodPressure: Double?
+    public var activity: Double?
     public var calorieIntake: Double?
 }

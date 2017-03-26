@@ -11,6 +11,7 @@ import UIKit
 class ResultViewController: UIViewController {
 
     @IBOutlet var bmr: UILabel!
+    @IBOutlet var maxHeartRate: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +38,6 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
