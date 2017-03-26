@@ -15,6 +15,22 @@ class BasicInfoViewController:UIViewController {
     @IBOutlet weak var ageLabel: UITextField!
     @IBOutlet weak var sexSelection: UISegmentedControl!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let age = DataManager.shared.age {
+            ageLabel.text = "\(age)"
+        }
+        if let width = DataManager.shared.weight {
+            weightLabel.text = "\(width)"
+        }
+        if let height = DataManager.shared.height {
+            heightLabel.text = "\(height)"
+        }
+        if let gender = DataManager.shared.gender {
+            sexSelection.selectedSegmentIndex = gender.rawValue
+        }
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showExtraInfoViewController" {
             if let age = ageLabel.text {

@@ -47,6 +47,7 @@ class WelcomeViewController: UIViewController {
             }
             else
             {
+                DataManager.shared.pull()
               //Update Data from Health Kit
             }
         }
