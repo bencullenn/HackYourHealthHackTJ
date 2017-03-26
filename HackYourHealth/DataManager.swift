@@ -7,10 +7,19 @@
 //
 
 import Foundation
+import HealthKit
 
 public enum Gender: Int {
     case male
     case female
+
+    static func from(hkBiologicalSexObject object: HKBiologicalSexObject) -> Gender? {
+        switch object.biologicalSex {
+        case .male: return .male
+        case .female: return .female
+        default: return nil
+        }
+    }
 }
 
 public enum Activity: Int {
@@ -29,7 +38,7 @@ public enum Activity: Int {
 public class DataManager {
     public static let shared = DataManager()
     private init(){}
-    
+
     public var weight: Double?
     public var height: Double?
     public var age: Double?
@@ -41,4 +50,5 @@ public class DataManager {
     public var MHR: Double?
     public var MAC: Double?
     public var TDEE: Double?
+    public var BMI: Double?
 }
