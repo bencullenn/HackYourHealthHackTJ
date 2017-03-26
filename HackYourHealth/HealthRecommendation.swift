@@ -24,8 +24,8 @@ public struct HealthRecommendation {
 
 extension HealthRecommendation {
     static func recommended(for currentHealthValue: Double) -> [HealthRecommendation] {
-        return HealthRecommendation.all.filter {
-            $0.shouldRecommendHealthImprovement(currentHealthValue: currentHealthValue)
+        return HealthRecommendation.all.filter { (recommendation) -> Bool in
+            return recommendation.shouldRecommendHealthImprovement(currentHealthValue: currentHealthValue)
         }
     }
     static let all: [HealthRecommendation] = [.fake]
