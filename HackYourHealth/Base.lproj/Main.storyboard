@@ -315,7 +315,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Oa-Bv-r7n">
-                                <rect key="frame" x="16" y="183" width="343" height="135"/>
+                                <rect key="frame" x="16" y="183.5" width="343" height="134.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2je-ev-13V">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -454,7 +454,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="MTt-54-im9" kind="show" id="lF9-eE-1LP"/>
+                                    <segue destination="MTt-54-im9" kind="show" identifier="showReco" id="lF9-eE-1LP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -118,12 +118,19 @@ class RecommendationsTableViewController: UITableViewController {
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
 
-        cell.textLabel?.text = "\(recommendations[indexPath.row])"
-        cell.textLabel?.text = "\(recommendations[indexPath.row].title)"
-
+        cell.textLabel?.text = recommendations[indexPath.row].title
         return cell
     }
-
+    
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showReco", sender: self)
+    }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showReco", let viewController = segue.destination as? RecommendationDetailViewController, let cell = sender as? UITableViewCell, let text = cell.textLabel?.text {
+            // your new view controller should have property that will store passed value
+            viewController.text = text
+        }
+    }
 }

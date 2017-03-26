@@ -7,3 +7,6 @@
 //
 
 import UIKit
+class RecommendationDetailViewController: UIViewController {
+    var text = ""
+}
