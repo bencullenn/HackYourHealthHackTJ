@@ -181,7 +181,7 @@
 				TargetAttributes = {
 					0CD5951A1E8763CD006A6586 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = B5AEZ75N3U;
+						DevelopmentTeam = 2H866F22W7;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.HealthKit = {
@@ -386,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HackYourHealth/HackYourHealth.entitlements;
-				DEVELOPMENT_TEAM = B5AEZ75N3U;
+				DEVELOPMENT_TEAM = 2H866F22W7;
 				INFOPLIST_FILE = HackYourHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.n.cullen.ben.HackYourHealth;
@@ -400,7 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HackYourHealth/HackYourHealth.entitlements;
-				DEVELOPMENT_TEAM = B5AEZ75N3U;
+				DEVELOPMENT_TEAM = 2H866F22W7;
 				INFOPLIST_FILE = HackYourHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.n.cullen.ben.HackYourHealth;
@@ -461,6 +461,7 @@
 				D1681FD71E87BFB200B0A5B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -453,9 +453,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="MTt-54-im9" kind="show" identifier="showReco" id="lF9-eE-1LP"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -463,15 +460,18 @@
                             <outlet property="delegate" destination="FwS-gv-FWx" id="vY8-I9-fvT"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="MTt-54-im9" kind="show" identifier="showReco" id="AAN-wa-IGL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xad-fW-4cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3190" y="91"/>
         </scene>
-        <!--Recommendations Detail View Controller-->
+        <!--Recommendation Detail View Controller-->
         <scene sceneID="D6s-bM-FKZ">
             <objects>
-                <viewController id="MTt-54-im9" customClass="RecommendationsDetailViewController" sceneMemberID="viewController">
+                <viewController id="MTt-54-im9" customClass="RecommendationDetailViewController" customModule="HackYourHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ISH-lE-a22"/>
                         <viewControllerLayoutGuide type="bottom" id="0oo-XA-rYS"/>
@@ -497,6 +497,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="RYf-jN-287" id="Uqy-1I-2qY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ1-pq-rNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
