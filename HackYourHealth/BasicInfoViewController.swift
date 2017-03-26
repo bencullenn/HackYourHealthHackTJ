@@ -26,8 +26,7 @@ class BasicInfoViewController:UIViewController {
                 DataManager.shared.gender = "Male";
             case 1:
                 DataManager.shared.gender = "Female";
-            default:
-                break;
+            
         }
         }
         }
