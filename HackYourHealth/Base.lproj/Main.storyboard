@@ -37,8 +37,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This application will ask you about" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgn-4d-A27">
-                                <rect key="frame" x="57" y="89" width="261" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This application will ask you about basic health information or find it on your health app if you allow that" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgn-4d-A27">
+                                <rect key="frame" x="57" y="89" width="261" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -50,16 +50,19 @@
                                 <state key="normal" title="Let's get started"/>
                                 <connections>
                                     <action selector="requestHealthPermissions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dO6-Hx-4Pf"/>
-                                    <segue destination="C18-Di-RpP" kind="show" id="33b-Gm-uke"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="tkS-3s-KjR"/>
+                    <connections>
+                        <segue destination="C18-Di-RpP" kind="show" identifier="showBasicInfoView" id="ADg-6E-H97"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="33.5" y="36.5"/>
         </scene>
         <!--Basic Info View Controller-->
         <scene sceneID="mlQ-Na-xaB">

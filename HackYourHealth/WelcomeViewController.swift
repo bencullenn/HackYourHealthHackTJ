@@ -7,9 +7,10 @@
 //
 
 import UIKit
-import HealthKi
+import HealthKit
 
 class WelcomeViewController: UIViewController {
+    let healthKitStore: HKHealthStore = HKHealthStore()
     
     override func viewDidLoad()
     {
@@ -26,16 +27,43 @@ class WelcomeViewController: UIViewController {
     //MARK:Functions
     @IBAction func requestHealthPermissions(_ sender: Any)
     {
-        guard HKHealthStore.isHealthDataAvailable() else {return}
-        
-        let healthStore = HKHealthStore ()
-        let sharableTypes = Set([])
-        let readableTypes = Set([])
-        
-        healthStore.requestAuthorization(toShare: sharableTypes, read: readableTypes) completion: success,error in {
-            
-            }
+       authorizeHealthKit()
     }
+    
+    func authorizeHealthKit() {
+        
+        // State the health data type(s) we want to read from HealthKit.
+        let healthDataToRead = Set(arrayLiteral:HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!)
+        // State the health data type(s) we want to write from HealthKit.
+        let healthDataToWrite = Set(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!)
+        
+        // Just in case OneHourWalker makes its way to an iPad...
+        if !HKHealthStore.isHealthDataAvailable()
+        {
+            print("Can't access HealthKit.")
+        }
+        
+        
+        // Request authorization to read and/or write the specific data.
+       healthKitStore.requestAuthorization(toShare: healthDataToWrite, read: healthDataToRead)
+        { //[weak self]
+                (success, error) in
+                
+                if !success {
+                    
+                    print("You didn't allow HealthKit to access these read/write data types. In your app, try to handle this error gracefully when a user decides not to provide access. The error was: \(error). If you're using a simulator, try it on a device.")
+                }
+            
+           // self?.performSegue(withIdentifier: "showBasicInfoView", sender: nil)
+
+        }
+        
+        performSegue(withIdentifier: "showBasicInfoView", sender: nil)
+        
+        
+
+}
+
 
     
 }
