@@ -13,12 +13,17 @@ public enum Gender: Int {
     case female
 }
 
-public enum Activity: Double {
-    case s = 1.2
-    case l = 1.375
-    case m = 1.55
-    case v = 1.725
-    case e = 1.9
+public enum Activity: Int {
+    case s, l, m, v, e
+    var value: Double {
+        switch self {
+        case .s: return 1.200
+        case .l: return 1.375
+        case .m: return  1.550
+        case .v: return  1.725
+        case .e: return  1.900
+        }
+    }
 }
 
 public class DataManager {
@@ -30,6 +35,10 @@ public class DataManager {
     public var age: Double?
     public var gender: Gender?
     public var restingHeartRate : Double?
-    public var activity: Double?
+    public var activity: Activity?
     public var calorieIntake: Double?
+    public var BMR: Double?
+    public var MHR: Double?
+    public var MAC: Double?
+    public var TDEE: Double?
 }

@@ -26,8 +26,9 @@ class ExtraInfoViewController: UIViewController {
         
         DataManager.shared.calorieIntake = Double(calorieIntakeField.text!)
 
-        DataManager.shared.activity = Activity(rawValue: Double(activitySelector.selectedSegmentIndex)).map { $0.rawValue }
+        DataManager.shared.activity = Activity(rawValue: activitySelector.selectedSegmentIndex);
         
+
         //if segue.identifier == ResultViewController, let vc = //segue.destination as ResultViewController {
         
 
