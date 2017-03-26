@@ -7,18 +7,35 @@
 //
 
 import UIKit
+import HealthKi
 
 class WelcomeViewController: UIViewController {
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK:Functions
+    @IBAction func requestHealthPermissions(_ sender: Any)
+    {
+        guard HKHealthStore.isHealthDataAvailable() else {return}
+        
+        let healthStore = HKHealthStore ()
+        let sharableTypes = Set([])
+        let readableTypes = Set([])
+        
+        healthStore.requestAuthorization(toShare: sharableTypes, read: readableTypes) completion: success,error in {
+            
+            }
+    }
+
     
 }
