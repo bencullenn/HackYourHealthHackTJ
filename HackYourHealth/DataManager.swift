@@ -41,4 +41,5 @@ public class DataManager {
     public var MHR: Double?
     public var MAC: Double?
     public var TDEE: Double?
+    public var BMI: Double?
 }

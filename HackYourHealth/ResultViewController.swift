@@ -10,6 +10,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet var bmi: UILabel!
     @IBOutlet var vo2Max: UILabel!
     @IBOutlet var bmr: UILabel!
     @IBOutlet var tdee: UILabel!
@@ -45,6 +46,10 @@ class ResultViewController: UIViewController {
     
         self.tdee.text = String(TDEEresult);
         DataManager.shared.TDEE = TDEEresult;
+        
+        let BMIresult = DataManager.shared.weight!/(DataManager.shared.height!*100*DataManager.shared.height!*100)
+        self.bmi.text = String(BMIresult);
+        DataManager.shared.BMI = BMIresult;
         // Do any additional setup a
     }
 
