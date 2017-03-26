@@ -34,6 +34,7 @@ class RecommendationsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showReco", let viewController = segue.destination as? RecommendationDetailViewController, let recommendation = sender as? HealthRecommendation{
+            viewController.title = recommendation.title
             viewController.text = recommendation.summary
         }
     }

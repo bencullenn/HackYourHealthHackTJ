@@ -487,15 +487,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Improvement Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYf-jN-287">
-                                <rect key="frame" x="24" y="109" width="327" height="428"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Improvement Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYf-jN-287">
+                                <rect key="frame" x="16" y="72" width="343" height="523"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="RYf-jN-287" secondAttribute="leading" id="A2e-SX-vHS"/>
+                            <constraint firstItem="RYf-jN-287" firstAttribute="centerY" secondItem="N14-SM-qsa" secondAttribute="centerY" id="GhF-IW-9xd"/>
+                            <constraint firstItem="RYf-jN-287" firstAttribute="centerX" secondItem="N14-SM-qsa" secondAttribute="centerX" id="b9U-nI-h1f"/>
+                            <constraint firstItem="RYf-jN-287" firstAttribute="top" secondItem="ISH-lE-a22" secondAttribute="bottom" constant="8" id="drz-Eg-E3f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RYf-jN-287" secondAttribute="trailing" id="y7Q-1U-7uj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="RYf-jN-287" id="Uqy-1I-2qY"/>
@@ -503,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ1-pq-rNB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3905" y="91"/>
+            <point key="canvasLocation" x="3904.8000000000002" y="90.404797601199405"/>
         </scene>
     </scenes>
     <resources>
