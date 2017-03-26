@@ -170,7 +170,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ageLabel" destination="SKh-ox-udZ" id="RR0-f6-2wL"/>
+                        <outlet property="heightLabel" destination="zZl-zn-boc" id="eVG-m0-kWg"/>
                         <outlet property="sexSelection" destination="bV6-Nj-Ao5" id="xG8-Y2-uau"/>
+                        <outlet property="weightLabel" destination="jER-T1-Wsz" id="Cnl-6n-p6M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0H-lc-mgF" userLabel="First Responder" sceneMemberID="firstResponder"/>

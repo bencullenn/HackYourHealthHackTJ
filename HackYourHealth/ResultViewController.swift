@@ -15,13 +15,13 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
 
         var result = 0.0;
-        if DataManager.shared.gender == "Female" {
+        if DataManager.shared.gender == .female {
             let part1 = 655 + 9.6*DataManager.shared.weight!
             let part2 = 1.8*DataManager.shared.height!
             let part3 = 4.7*DataManager.shared.age!
             result = Double(part1 + part2 - part3);
         }
-        if DataManager.shared.gender == "Male" {
+        if DataManager.shared.gender == .male {
             let part1 = 66 + 13.7*DataManager.shared.weight!
             let part2 = 5*DataManager.shared.height!
             let part3 = 6.8*DataManager.shared.age!
