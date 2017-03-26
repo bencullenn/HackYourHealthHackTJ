@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		0CD5951F1E8763CD006A6586 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5951E1E8763CD006A6586 /* AppDelegate.swift */; };
-		0CD595211E8763CD006A6586 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD595201E8763CD006A6586 /* ViewController.swift */; };
+		0CD595211E8763CD006A6586 /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD595201E8763CD006A6586 /* BasicInfoViewController.swift */; };
 		0CD595241E8763CD006A6586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD595221E8763CD006A6586 /* Main.storyboard */; };
 		0CD595261E8763CD006A6586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CD595251E8763CD006A6586 /* Assets.xcassets */; };
 		0CD595291E8763CD006A6586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD595271E8763CD006A6586 /* LaunchScreen.storyboard */; };
+		0CD595311E877F74006A6586 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD595301E877F74006A6586 /* WelcomeViewController.swift */; };
+		0CD595331E878008006A6586 /* ExtraInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD595321E878008006A6586 /* ExtraInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0CD5951B1E8763CD006A6586 /* HackYourHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackYourHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD5951E1E8763CD006A6586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CD595201E8763CD006A6586 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CD595201E8763CD006A6586 /* BasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
 		0CD595231E8763CD006A6586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CD595251E8763CD006A6586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CD595281E8763CD006A6586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CD5952A1E8763CD006A6586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CD595301E877F74006A6586 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		0CD595321E878008006A6586 /* ExtraInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				0CD5951E1E8763CD006A6586 /* AppDelegate.swift */,
-				0CD595201E8763CD006A6586 /* ViewController.swift */,
+				0CD595201E8763CD006A6586 /* BasicInfoViewController.swift */,
+				0CD595301E877F74006A6586 /* WelcomeViewController.swift */,
+				0CD595321E878008006A6586 /* ExtraInfoViewController.swift */,
 				0CD595221E8763CD006A6586 /* Main.storyboard */,
 				0CD595251E8763CD006A6586 /* Assets.xcassets */,
 				0CD595271E8763CD006A6586 /* LaunchScreen.storyboard */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CD595211E8763CD006A6586 /* ViewController.swift in Sources */,
+				0CD595311E877F74006A6586 /* WelcomeViewController.swift in Sources */,
+				0CD595211E8763CD006A6586 /* BasicInfoViewController.swift in Sources */,
 				0CD5951F1E8763CD006A6586 /* AppDelegate.swift in Sources */,
+				0CD595331E878008006A6586 /* ExtraInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
