@@ -18,7 +18,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         var result = 0.0;
         
-        /*if DataManager.shared.gender == .female {
+        if DataManager.shared.gender == .female {
             let part1 = 655 + 9.6*DataManager.shared.weight!
             let part2 = 1.8*DataManager.shared.height!
             let part3 = 4.7*DataManager.shared.age!
@@ -52,20 +52,5 @@ class ResultViewController: UIViewController {
         // Do any additional setup a
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecommendationsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecommendationsTableViewController: UITableViewController {
 
     var current: Double = 0
         {
@@ -19,7 +19,7 @@ class RecommendationsTableViewController: UIViewController, UITableViewDelegate,
     }
     private var recomendations = [HealthRecommendation]()
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recomendations.count
     }
 
@@ -28,7 +28,7 @@ class RecommendationsTableViewController: UIViewController, UITableViewDelegate,
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
 
