@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tg0-6e-9m4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-950" y="126"/>
+            <point key="canvasLocation" x="-951" y="92"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
@@ -38,23 +38,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This application will ask you about basic health information or find it on your health app if you allow that" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgn-4d-A27">
-                                <rect key="frame" x="57" y="89" width="261" height="121"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fu-Zu-VbZ">
-                                <rect key="frame" x="131" y="479" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Let's get started"/>
-                                <connections>
-                                    <action selector="requestHealthPermissions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dO6-Hx-4Pf"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zqW-hg-Nt1">
+                                <rect key="frame" x="16" y="72" width="343" height="587"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="This application will ask you about basic health information or find it on your health app if you allow that" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgn-4d-A27">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="293.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fu-Zu-VbZ">
+                                        <rect key="frame" x="115" y="293.5" width="113" height="293.5"/>
+                                        <state key="normal" title="Let's get started"/>
+                                        <connections>
+                                            <action selector="requestHealthPermissions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dO6-Hx-4Pf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="zqW-hg-Nt1" secondAttribute="leading" id="4K6-hl-JKe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zqW-hg-Nt1" secondAttribute="trailing" id="C3G-ce-Xrs"/>
+                            <constraint firstItem="zqW-hg-Nt1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="No5-XZ-ORq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zqW-hg-Nt1" secondAttribute="bottom" constant="8" symbolic="YES" id="duC-1S-UAz"/>
+                            <constraint firstItem="zqW-hg-Nt1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wvC-w0-YuS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="tkS-3s-KjR"/>
                     <connections>
@@ -63,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="94"/>
+            <point key="canvasLocation" x="-58.399999999999999" y="93.103448275862078"/>
         </scene>
         <!--Basic info-->
         <scene sceneID="mlQ-Na-xaB">
@@ -78,14 +88,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDK-6R-ke8">
-                                <rect key="frame" x="156" y="617" width="62" height="30"/>
+                                <rect key="frame" x="156.5" y="617" width="62" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <segue destination="hVK-CF-boq" kind="show" identifier="showExtraInfoViewController" id="fC5-OD-cAa"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-eV-T4z">
-                                <rect key="frame" x="16" y="261" width="343" height="144"/>
+                                <rect key="frame" x="16" y="261.5" width="343" height="144"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WJS-dC-RIB">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -264,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZw-e5-V0t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="79"/>
+            <point key="canvasLocation" x="1614" y="93"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="Cf0-Is-hF5">
@@ -341,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3k-qC-c6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2492" y="36.431784107946029"/>
+            <point key="canvasLocation" x="2447" y="92"/>
         </scene>
     </scenes>
 </document>
