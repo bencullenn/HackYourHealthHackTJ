@@ -17,45 +17,26 @@ class ResultViewController: UIViewController {
     @IBOutlet var maxHeartRate: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var result = 0.0
 
-        if DataManager.shared.gender == .female {
-            let part1 = 655 + 9.6*DataManager.shared.weight!
-            let part2 = 1.8*DataManager.shared.height!
-            let part3 = 4.7*DataManager.shared.age!
-            result = part1 + part2 - part3
+        if let bmr = DataManager.shared.BMR {
+            self.bmr.text = "\(bmr)"
         }
 
-        if DataManager.shared.gender == .male {
-            let part1 = 66 + 13.7*DataManager.shared.weight!
-            let part2 = 5*DataManager.shared.height!
-            let part3 = 6.8*DataManager.shared.age!
-
-            print("Part1:\(part1)) \n Part2:\(part2) \n Part3:\(part3)")
-            result = part1 + part2 - part3
-            print ("Result\(result)")
+        if let maxHeartRateResult = DataManager.shared.MHR {
+            self.maxHeartRate.text = "\(maxHeartRateResult)"
         }
 
-        self.bmr.text = "\(result)"
-        DataManager.shared.BMR = result
+        if let vo2MaxResult = DataManager.shared.MAC {
+            self.vo2Max.text = "\(vo2MaxResult)"
+        }
 
-        let maxHeartRateResult = 208 - 0.7*DataManager.shared.age!
-        self.maxHeartRate.text = "\(maxHeartRateResult)"
-        DataManager.shared.MHR = maxHeartRateResult
+        if let tdeeResult = DataManager.shared.TDEE {
+            self.tdee.text = "\(tdeeResult)"
+        }
 
-        let vo2MaxResult = 15.3*maxHeartRateResult/DataManager.shared.restingHeartRate!
-        self.vo2Max.text = "\(vo2MaxResult)"
-        DataManager.shared.MAC = vo2MaxResult
-
-        let tdeeResult = result*DataManager.shared.activity!.value
-        self.tdee.text = "\(tdeeResult)"
-        DataManager.shared.TDEE = tdeeResult
-
-        let BMIresult = DataManager.shared.weight!/(DataManager.shared.height!*100*DataManager.shared.height!*100)
-        self.bmi.text = "\(BMIresult)"
-        DataManager.shared.BMI = BMIresult
-
-        // Do any additional setup a
+        if let bmiResult = DataManager.shared.BMI {
+            self.bmi.text = "\(bmiResult)"
+        }
     }
     
 }

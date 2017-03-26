@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="-58.399999999999999" y="93.103448275862078"/>
         </scene>
-        <!--Basic info-->
+        <!--Basic Info-->
         <scene sceneID="mlQ-Na-xaB">
             <objects>
-                <viewController title="Basic info" id="C18-Di-RpP" customClass="BasicInfoViewController" customModule="HackYourHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Basic Info" id="C18-Di-RpP" customClass="BasicInfoViewController" customModule="HackYourHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kCV-xY-R9t"/>
                         <viewControllerLayoutGuide type="bottom" id="11A-ef-AuX"/>
@@ -230,7 +230,7 @@
                                                 <rect key="frame" x="152" y="0.0" width="191" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
