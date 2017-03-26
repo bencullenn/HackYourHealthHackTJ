@@ -29,9 +29,7 @@ class ResultViewController: UIViewController {
             let part2 = 5*DataManager.shared.height!
             let part3 = 6.8*DataManager.shared.age!
             
-            print("Part1:\(part1)) \n Part2:\(part2) \n Part3:\(part3)")
             result = Double(part1 + part2 - part3);
-            print ("Result\(result)")
         }
 
         self.bmr.text = String(result);

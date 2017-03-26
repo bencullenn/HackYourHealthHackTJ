@@ -28,7 +28,10 @@ public enum Activity: Int {
 
 public class DataManager {
     public static let shared = DataManager()
-    private init(){}
+    private init()
+    {
+        
+    }
     
     public var weight: Double?
     public var height: Double?

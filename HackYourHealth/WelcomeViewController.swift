@@ -33,9 +33,17 @@ class WelcomeViewController: UIViewController {
     func authorizeHealthKit() {
 
         // State the health data type(s) we want to read from HealthKit.
-        let healthDataToRead = Set(arrayLiteral:HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!)
+        let healthDataToRead = Set<HKSampleType>(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
+            HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.bodyMassIndex)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)!)
         // State the health data type(s) we want to write from HealthKit.
-        let healthDataToWrite = Set(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!)
+        let healthDataToWrite = Set<HKSampleType>(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
+            HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.bodyMassIndex)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
+            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)!)
 
         // Just in case OneHourWalker makes its way to an iPad...
         if !HKHealthStore.isHealthDataAvailable()
@@ -48,6 +56,10 @@ class WelcomeViewController: UIViewController {
         { (success, error) in
             if !success {
                 print("You didn't allow HealthKit to access these read/write data types. In your app, try to handle this error gracefully when a user decides not to provide access. The error was: \(error). If you're using a simulator, try it on a device.")
+            }
+            else
+            {
+              //Update Data from Health Kit
             }
         }
         performSegue(withIdentifier: "showBasicInfoView", sender: nil)
