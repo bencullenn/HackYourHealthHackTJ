@@ -8,34 +8,33 @@
 
 import UIKit
 
-class UIViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
-    
-    let bodyMassIndexRecommendation = HealthRecommendation("Body Mass Index","")
-    
-    
-    
-    var recomendationsToDisplay = [HealthRecommendation]()
-    
-    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return recomendationsToDisplay
+class RecommendationsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    var current: Double = 0 {
+        didSet {
+            HealthRecommendation.recommended(for: current)
+        }
     }
-    
-    
+    private var recomendations = [HealthRecommendation]()
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recomendationsToDisplay.count
+    }
+
+
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
     // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
-    
-    
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
-        
-        cell.textLabel?.text = recommendations[indexPath.row]
-        
+
+        cell.textLabel?.text = recomendations[indexPath.row]
+
         return cell
     }
-    
 
+    
     
 }
