@@ -10,6 +10,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet var vo2Max: UILabel!
     @IBOutlet var bmr: UILabel!
     @IBOutlet var maxHeartRate: UILabel!
     override func viewDidLoad() {
@@ -28,8 +29,13 @@ class ResultViewController: UIViewController {
             let part3 = 6.8*DataManager.shared.age!
             result = Double(part1 + part2 - part3);
         }
-        
         self.bmr.text = String(result);
+        
+        var maxHeartRateResult = Double(208 - 0.7*DataManager.shared.age!);
+        self.maxHeartRate.text = String(maxHeartRateResult);
+        
+        var vo2MaxResult = 15.3*maxHeartRateResult/DataManager.shared.restingHeartRate!;
+        self.vo2Max.text = String(vo2MaxResult);
         // Do any additional setup a
     }
 

@@ -13,6 +13,14 @@ public enum Gender: Int {
     case female
 }
 
+public enum Activity: Double {
+    case s = 1.2
+    case l = 1.375
+    case m = 1.55
+    case v = 1.725
+    case e = 1.9
+}
+
 public class DataManager {
     public static let shared = DataManager()
     private init(){}
