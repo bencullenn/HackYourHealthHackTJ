@@ -92,14 +92,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDK-6R-ke8">
-                                <rect key="frame" x="156.5" y="617" width="62" height="30"/>
+                                <rect key="frame" x="156" y="326.5" width="62" height="30"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
                                     <segue destination="hVK-CF-boq" kind="show" identifier="showExtraInfoViewController" id="fC5-OD-cAa"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6nY-eV-T4z">
-                                <rect key="frame" x="16" y="261.5" width="343" height="144"/>
+                                <rect key="frame" x="16" y="166" width="343" height="144"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WJS-dC-RIB">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -114,7 +114,7 @@
                                                 <rect key="frame" x="96" y="0.0" width="247" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -131,7 +131,7 @@
                                                 <rect key="frame" x="98" y="0.0" width="245" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -148,7 +148,7 @@
                                                 <rect key="frame" x="38" y="0.0" width="305" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -175,11 +175,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6nY-eV-T4z" firstAttribute="centerY" secondItem="ed0-KH-bki" secondAttribute="centerY" id="4ZW-11-v0m"/>
                             <constraint firstAttribute="leadingMargin" secondItem="6nY-eV-T4z" secondAttribute="leading" id="57s-f7-M3R"/>
-                            <constraint firstItem="11A-ef-AuX" firstAttribute="top" secondItem="LDK-6R-ke8" secondAttribute="bottom" constant="20" id="Btk-Ck-bHb"/>
                             <constraint firstItem="6nY-eV-T4z" firstAttribute="centerX" secondItem="ed0-KH-bki" secondAttribute="centerX" id="FCZ-PN-wJh"/>
+                            <constraint firstItem="LDK-6R-ke8" firstAttribute="centerX" secondItem="ed0-KH-bki" secondAttribute="centerX" id="Weq-VD-4W9"/>
                             <constraint firstItem="LDK-6R-ke8" firstAttribute="centerX" secondItem="ed0-KH-bki" secondAttribute="centerX" id="Yzq-6h-Dk5"/>
+                            <constraint firstItem="LDK-6R-ke8" firstAttribute="centerY" secondItem="ed0-KH-bki" secondAttribute="centerY" constant="8" id="cle-5v-eBU"/>
+                            <constraint firstItem="LDK-6R-ke8" firstAttribute="top" secondItem="6nY-eV-T4z" secondAttribute="bottom" constant="16.5" id="lRc-cl-fCb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6nY-eV-T4z" secondAttribute="trailing" id="wrV-vh-sSl"/>
                         </constraints>
                     </view>
@@ -206,8 +207,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COl-7p-ueE">
+                                <rect key="frame" x="148" y="326.5" width="79" height="30"/>
+                                <state key="normal" title="Get Results"/>
+                                <connections>
+                                    <segue destination="lWL-ub-4Ug" kind="show" identifier="ShowResult" id="hKP-t1-rcY"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jxG-1o-EHh">
-                                <rect key="frame" x="16" y="263" width="343" height="142"/>
+                                <rect key="frame" x="16" y="176" width="343" height="142"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MBv-gy-eYj">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -222,7 +230,7 @@
                                                 <rect key="frame" x="152" y="0.0" width="191" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -239,7 +247,7 @@
                                                 <rect key="frame" x="179" y="0.0" width="164" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -266,21 +274,15 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COl-7p-ueE">
-                                <rect key="frame" x="148" y="617" width="79" height="30"/>
-                                <state key="normal" title="Get Results"/>
-                                <connections>
-                                    <segue destination="lWL-ub-4Ug" kind="show" identifier="ShowResult" id="hKP-t1-rcY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jxG-1o-EHh" firstAttribute="leading" secondItem="1lm-9r-2ot" secondAttribute="leadingMargin" id="336-BZ-jfE"/>
+                            <constraint firstItem="COl-7p-ueE" firstAttribute="centerY" secondItem="1lm-9r-2ot" secondAttribute="centerY" constant="8" id="7K1-7Q-gpW"/>
                             <constraint firstItem="jxG-1o-EHh" firstAttribute="centerX" secondItem="1lm-9r-2ot" secondAttribute="centerX" id="7dY-1e-WNk"/>
                             <constraint firstItem="COl-7p-ueE" firstAttribute="centerX" secondItem="1lm-9r-2ot" secondAttribute="centerX" id="FhP-ZB-nFY"/>
-                            <constraint firstAttribute="bottom" secondItem="COl-7p-ueE" secondAttribute="bottom" constant="20" symbolic="YES" id="WlS-UH-viC"/>
-                            <constraint firstItem="jxG-1o-EHh" firstAttribute="centerY" secondItem="1lm-9r-2ot" secondAttribute="centerY" id="bdh-t6-kiG"/>
+                            <constraint firstItem="COl-7p-ueE" firstAttribute="top" secondItem="jxG-1o-EHh" secondAttribute="bottom" constant="8.5" id="GAt-Dt-vf3"/>
+                            <constraint firstItem="COl-7p-ueE" firstAttribute="centerX" secondItem="1lm-9r-2ot" secondAttribute="centerX" id="aMA-PL-rYa"/>
                         </constraints>
                     </view>
                     <connections>
@@ -305,8 +307,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWk-E3-Ju3">
+                                <rect key="frame" x="99" y="326.5" width="176" height="30"/>
+                                <state key="normal" title="View Health Improvments"/>
+                                <connections>
+                                    <segue destination="FwS-gv-FWx" kind="show" id="b0p-xB-4vT"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Oa-Bv-r7n">
-                                <rect key="frame" x="16" y="266.5" width="343" height="134.5"/>
+                                <rect key="frame" x="16" y="183" width="343" height="135"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2je-ev-13V">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -395,20 +404,14 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWk-E3-Ju3">
-                                <rect key="frame" x="99" y="617" width="176" height="30"/>
-                                <state key="normal" title="View Health Improvments"/>
-                                <connections>
-                                    <segue destination="FwS-gv-FWx" kind="show" id="b0p-xB-4vT"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2Oa-Bv-r7n" firstAttribute="centerY" secondItem="tgK-w3-8lI" secondAttribute="centerY" id="9lP-iX-PyD"/>
+                            <constraint firstItem="QWk-E3-Ju3" firstAttribute="top" secondItem="2Oa-Bv-r7n" secondAttribute="bottom" constant="8.5" id="7gs-hq-Ygb"/>
                             <constraint firstItem="QWk-E3-Ju3" firstAttribute="centerX" secondItem="tgK-w3-8lI" secondAttribute="centerX" id="I0v-cG-bzq"/>
-                            <constraint firstItem="ord-0A-VrA" firstAttribute="top" secondItem="QWk-E3-Ju3" secondAttribute="bottom" constant="20" id="JJW-Rw-qbY"/>
                             <constraint firstItem="2Oa-Bv-r7n" firstAttribute="leading" secondItem="tgK-w3-8lI" secondAttribute="leadingMargin" id="RG0-YI-tdq"/>
+                            <constraint firstItem="QWk-E3-Ju3" firstAttribute="centerY" secondItem="tgK-w3-8lI" secondAttribute="centerY" constant="8" id="UFx-Bk-6i2"/>
+                            <constraint firstItem="QWk-E3-Ju3" firstAttribute="centerX" secondItem="tgK-w3-8lI" secondAttribute="centerX" id="XhL-lo-ECr"/>
                             <constraint firstItem="2Oa-Bv-r7n" firstAttribute="centerX" secondItem="tgK-w3-8lI" secondAttribute="centerX" id="c55-gB-Odu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Oa-Bv-r7n" secondAttribute="trailing" id="yGH-Bi-7Zx"/>
                         </constraints>
