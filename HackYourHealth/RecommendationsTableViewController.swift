@@ -10,15 +10,17 @@ import UIKit
 
 class RecommendationsTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var current: Double = 0 {
-        didSet {
-            HealthRecommendation.recommended(for: current)
+    var current: Double = 0
+        {
+        didSet
+        {
+            recomendations = HealthRecommendation.recommended(for: current)
         }
     }
     private var recomendations = [HealthRecommendation]()
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recomendationsToDisplay.count
+        return recomendations.count
     }
 
 
@@ -30,7 +32,7 @@ class RecommendationsTableViewController: UIViewController, UITableViewDelegate,
     {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
 
-        cell.textLabel?.text = recomendations[indexPath.row]
+        cell.textLabel?.text = "\(recomendations[indexPath.row])"
 
         return cell
     }

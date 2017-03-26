@@ -13,9 +13,9 @@ class ResultViewController: UIViewController {
     @IBOutlet var bmr: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-    print ("It ran")
         var result = 0.0;
-        if DataManager.shared.gender == .female {
+        
+        /*if DataManager.shared.gender == .female {
             let part1 = 655 + 9.6*DataManager.shared.weight!
             let part2 = 1.8*DataManager.shared.height!
             let part3 = 4.7*DataManager.shared.age!
@@ -30,10 +30,8 @@ class ResultViewController: UIViewController {
             result = Double(part1 + part2 - part3);
             print ("Result\(result)")
         }
-        
-        print ("It finished")
+        */
         self.bmr.text = String(result);
-        // Do any additional setup a
     }
 
     override func didReceiveMemoryWarning() {
