@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import HealthKi
+import HealthKit
 
 class WelcomeViewController: UIViewController {
     
@@ -29,12 +29,11 @@ class WelcomeViewController: UIViewController {
         guard HKHealthStore.isHealthDataAvailable() else {return}
         
         let healthStore = HKHealthStore ()
-        let sharableTypes = Set([])
-        let readableTypes = Set([])
+        //let sharableTypes = Set([])
+        //let readableTypes = Set([])
+        //healthStore.requestAuthorization(toShare: sharableTypes, read: readableTypes) completion success,error in {
         
-        healthStore.requestAuthorization(toShare: sharableTypes, read: readableTypes) completion: success,error in {
-            
-            }
+       // }
     }
 
     
