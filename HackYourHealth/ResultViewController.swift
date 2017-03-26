@@ -47,6 +47,7 @@ class ResultViewController: UIViewController {
         if let bmiResult = DataManager.shared.BMI {
             self.bmi.text = format(bmiResult)
         }
+        DataManager.shared.push()
     }
     
 }

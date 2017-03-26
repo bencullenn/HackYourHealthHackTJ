@@ -20,18 +20,15 @@ class WelcomeViewController: UIViewController {
 
     func authorizeHealthKit() {
 
+        let identifiers: [HKQuantityTypeIdentifier] = [
+            .bodyMassIndex, .height, .heartRate, .dietaryEnergyConsumed
+        ]
         // State the health data type(s) we want to read from HealthKit.
-        let healthDataToRead = Set<HKSampleType>(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
-            HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.bodyMassIndex)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)!)
+        var healthDataToRead: Set<HKObjectType> = Set(identifiers.map {(id) in HKObjectType.quantityType(forIdentifier: id)!})
+        healthDataToRead.insert(HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!)
+
         // State the health data type(s) we want to write from HealthKit.
-        let healthDataToWrite = Set<HKSampleType>(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
-            HKObjectType.quantityType(forIdentifier:HKQuantityTypeIdentifier.bodyMassIndex)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-            HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)!)
+        let healthDataToWrite = Set(identifiers.map {(id) in HKObjectType.quantityType(forIdentifier: id)!})
 
         // Just in case OneHourWalker makes its way to an iPad...
         if !HKHealthStore.isHealthDataAvailable()
@@ -48,9 +45,10 @@ class WelcomeViewController: UIViewController {
             else
             {
                 DataManager.shared.pull()
-              //Update Data from Health Kit
+            }
+            DispatchQueue.main.sync { [weak self] in
+                self?.performSegue(withIdentifier: "showBasicInfoView", sender: nil)
             }
         }
-        performSegue(withIdentifier: "showBasicInfoView", sender: nil)
     }
 }

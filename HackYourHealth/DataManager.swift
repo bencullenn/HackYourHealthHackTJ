@@ -52,22 +52,17 @@ public class DataManager {
 }
 
 extension DataManager {
-    static let healthKitIdentifiers: [HKQuantityTypeIdentifier] = [.bodyMass, .height, .bodyMassIndex, .heartRate, .dietaryEnergyConsumed]
-
-    private func fetch(identifier: HKQuantityTypeIdentifier, unit: HKUnit, completion: @escaping (Double) -> Void) {
+    private func fetch(identifier: HKQuantityTypeIdentifier, unit: HKUnit, completion: @escaping (Double?) -> Void) {
         let components = calendar.dateComponents([.year, .month, .day], from: Date())
         if let startDate = calendar.date(from: components) {
             let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)
             if let sampleType = HKSampleType.quantityType(forIdentifier: identifier) {
-                if healthKitStore.authorizationStatus(for: sampleType) == .sharingAuthorized {
-                    let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictEndDate)
-                    let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (_, samples, _) in
-                        if let sample = samples?.first as? HKQuantitySample {
-                            completion(sample.quantity.doubleValue(for: unit))
-                        }
-                    }
-                    healthKitStore.execute(query)
+                print(sampleType, healthKitStore.authorizationStatus(for: sampleType))
+                let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: .strictEndDate)
+                let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: HKObjectQueryNoLimit, sortDescriptors: nil) { (_, samples, _) in
+                    completion((samples?.first as? HKQuantitySample)?.quantity.doubleValue(for: unit))
                 }
+                healthKitStore.execute(query)
             }
         }
     }
@@ -77,33 +72,44 @@ extension DataManager {
             self.gender = gender
         }
 
-        let now = Date()
         if let components = try? healthKitStore.dateOfBirthComponents(),
             let birthday = calendar.date(from: components) {
-            if let year = calendar.dateComponents([.year], from: birthday, to: now).year {
+            if let year = calendar.dateComponents([.year], from: birthday, to: Date()).year {
                 self.age = Double(year)
             }
         }
 
         fetch(identifier: .bodyMass, unit: HKUnit.gramUnit(with: .kilo)) { weight in
-            self.weight = weight
+            if let weight = weight {
+                self.weight = weight
+            }
         }
         fetch(identifier: .height, unit: HKUnit.meterUnit(with: .centi)) { height in
-            self.height = height
+            if let height = height {
+                self.height = height
+            }
         }
         fetch(identifier: .dietaryEnergyConsumed, unit: HKUnit.kilocalorie()) { calorie in
-            self.calorieIntake = calorie
+            if let calorie = calorie {
+                self.calorieIntake = calorie
+            }
         }
         fetch(identifier: .heartRate, unit: HKUnit.count()) { beats in
-            self.restingHeartRate = beats
+            if let beats = beats {
+                self.restingHeartRate = beats
+            }
         }
     }
-    public func store(value: Double?, identifier: HKQuantityTypeIdentifier, unit: HKUnit) {
+    fileprivate func store(value: Double?, identifier: HKQuantityTypeIdentifier, unit: HKUnit, completion: (() -> Void)? = nil) {
         guard let value = value, let quantityType = HKQuantityType.quantityType(forIdentifier: identifier) else { return }
-        let quantity = HKQuantity(unit: unit, doubleValue: value)
-        let now = Date()
-        let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: now, end: now)
-        healthKitStore.save(sample) {_,_ in}
+        fetch(identifier: identifier, unit: unit) { existing in
+            if value != existing {
+                let quantity = HKQuantity(unit: unit, doubleValue: value)
+                let now = Date()
+                let sample = HKQuantitySample(type: quantityType, quantity: quantity, start: now, end: now.addingTimeInterval(1))
+                healthKitStore.save(sample) { _,_ in completion?() }
+            }
+        }
     }
     public func push() {
         store(value: weight, identifier: .bodyMass, unit: HKUnit.gramUnit(with: .kilo))
