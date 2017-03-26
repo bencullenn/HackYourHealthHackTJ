@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1395BC1E87AD2C00B0A991 /* HealthRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1395BB1E87AD2C00B0A991 /* HealthRecommendation.swift */; };
+		0C1395BE1E87B46E00B0A991 /* RecommendationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1395BD1E87B46E00B0A991 /* RecommendationsTableViewController.swift */; };
+		0C1395C01E87B48500B0A991 /* RecommendationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1395BF1E87B48500B0A991 /* RecommendationDetailViewController.swift */; };
 		0CD5951F1E8763CD006A6586 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD5951E1E8763CD006A6586 /* AppDelegate.swift */; };
 		0CD595211E8763CD006A6586 /* BasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD595201E8763CD006A6586 /* BasicInfoViewController.swift */; };
 		0CD595241E8763CD006A6586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD595221E8763CD006A6586 /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1395BB1E87AD2C00B0A991 /* HealthRecommendation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthRecommendation.swift; sourceTree = "<group>"; };
+		0C1395BD1E87B46E00B0A991 /* RecommendationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationsTableViewController.swift; sourceTree = "<group>"; };
+		0C1395BF1E87B48500B0A991 /* RecommendationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationDetailViewController.swift; sourceTree = "<group>"; };
 		0CD5951B1E8763CD006A6586 /* HackYourHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackYourHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD5951E1E8763CD006A6586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD595201E8763CD006A6586 /* BasicInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoViewController.swift; sourceTree = "<group>"; };
@@ -95,8 +101,11 @@
 				0CD595301E877F74006A6586 /* WelcomeViewController.swift */,
 				0CD595201E8763CD006A6586 /* BasicInfoViewController.swift */,
 				D1681FC91E87988100B0A5B2 /* DataManager.swift */,
+				0C1395BB1E87AD2C00B0A991 /* HealthRecommendation.swift */,
 				0CD595321E878008006A6586 /* ExtraInfoViewController.swift */,
 				0CD595221E8763CD006A6586 /* Main.storyboard */,
+				0C1395BD1E87B46E00B0A991 /* RecommendationsTableViewController.swift */,
+				0C1395BF1E87B48500B0A991 /* RecommendationDetailViewController.swift */,
 				D1681FC71E87967200B0A5B2 /* ResultViewController.swift */,
 				0CD595251E8763CD006A6586 /* Assets.xcassets */,
 				0CD595271E8763CD006A6586 /* LaunchScreen.storyboard */,
@@ -232,6 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1681FC81E87967200B0A5B2 /* ResultViewController.swift in Sources */,
+				0C1395C01E87B48500B0A991 /* RecommendationDetailViewController.swift in Sources */,
+				0C1395BC1E87AD2C00B0A991 /* HealthRecommendation.swift in Sources */,
+				0C1395BE1E87B46E00B0A991 /* RecommendationsTableViewController.swift in Sources */,
 				D1681FCA1E87988100B0A5B2 /* DataManager.swift in Sources */,
 				0CD595311E877F74006A6586 /* WelcomeViewController.swift in Sources */,
 				0CD595211E8763CD006A6586 /* BasicInfoViewController.swift in Sources */,
