@@ -13,7 +13,7 @@ class ResultViewController: UIViewController {
     @IBOutlet var bmr: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    print ("It ran")
         var result = 0.0;
         if DataManager.shared.gender == .female {
             let part1 = 655 + 9.6*DataManager.shared.weight!
@@ -25,9 +25,13 @@ class ResultViewController: UIViewController {
             let part1 = 66 + 13.7*DataManager.shared.weight!
             let part2 = 5*DataManager.shared.height!
             let part3 = 6.8*DataManager.shared.age!
+            
+            print("Part1:\(part1)) \n Part2:\(part2) \n Part3:\(part3)")
             result = Double(part1 + part2 - part3);
+            print ("Result\(result)")
         }
         
+        print ("It finished")
         self.bmr.text = String(result);
         // Do any additional setup a
     }
