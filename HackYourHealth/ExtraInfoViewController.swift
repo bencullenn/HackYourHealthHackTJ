@@ -9,15 +9,25 @@
 import UIKit
 
 class ExtraInfoViewController: UIViewController {
+    @IBOutlet var restingHeartRateField: UITextField!
+    @IBOutlet var bloodPressureField: UITextField!
+    @IBOutlet var calorieIntakeField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        DataManager.shared.restingHeartRate = Double(restingHeartRateField.text!)
+        DataManager.shared.bloodPressure = Double(bloodPressureField.text!)
+        DataManager.shared.calorieIntake = Double(calorieIntakeField.text!)
+        //if segue.identifier == ResultViewController, let vc = //segue.destination as ResultViewController {
+        
+
+        //}
     }
     
     
