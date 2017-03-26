@@ -37,6 +37,15 @@ class WelcomeViewController: UIViewController {
         // State the health data type(s) we want to write from HealthKit.
         let healthDataToWrite = Set(arrayLiteral: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!)
         
+<<<<<<< HEAD
+        let healthStore = HKHealthStore ()
+        //let sharableTypes = Set([])
+        //let readableTypes = Set([])
+        //healthStore.requestAuthorization(toShare: sharableTypes, read: readableTypes) completion success,error in {
+        
+       // }
+    }
+=======
         // Just in case OneHourWalker makes its way to an iPad...
         if !HKHealthStore.isHealthDataAvailable()
         {
@@ -64,6 +73,7 @@ class WelcomeViewController: UIViewController {
 
 }
 
+>>>>>>> master
 
     
 }
