@@ -14,12 +14,9 @@
 		0CD595291E8763CD006A6586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD595271E8763CD006A6586 /* LaunchScreen.storyboard */; };
 		0CD595311E877F74006A6586 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD595301E877F74006A6586 /* WelcomeViewController.swift */; };
 		0CD595331E878008006A6586 /* ExtraInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD595321E878008006A6586 /* ExtraInfoViewController.swift */; };
-<<<<<<< HEAD
 		D1681FC81E87967200B0A5B2 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1681FC71E87967200B0A5B2 /* ResultViewController.swift */; };
 		D1681FCA1E87988100B0A5B2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1681FC91E87988100B0A5B2 /* DataManager.swift */; };
-=======
 		0CD595371E878AD6006A6586 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD595361E878AD6006A6586 /* HealthKit.framework */; };
->>>>>>> master
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,13 +29,10 @@
 		0CD5952A1E8763CD006A6586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CD595301E877F74006A6586 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0CD595321E878008006A6586 /* ExtraInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtraInfoViewController.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		D1681FC71E87967200B0A5B2 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		D1681FC91E87988100B0A5B2 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-=======
 		0CD595341E878AD6006A6586 /* HackYourHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HackYourHealth.entitlements; sourceTree = "<group>"; };
 		0CD595361E878AD6006A6586 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
->>>>>>> master
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
