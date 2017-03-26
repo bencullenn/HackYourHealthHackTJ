@@ -10,7 +10,10 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet var vo2Max: UILabel!
     @IBOutlet var bmr: UILabel!
+    @IBOutlet var tdee: UILabel!
+    @IBOutlet var maxHeartRate: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         var result = 0.0;
@@ -30,8 +33,24 @@ class ResultViewController: UIViewController {
             result = Double(part1 + part2 - part3);
             print ("Result\(result)")
         }
-        */
+
         self.bmr.text = String(result);
+        DataManager.shared.BMR = result;
+        
+        let maxHeartRateResult = Double(208 - 0.7*DataManager.shared.age!);
+        self.maxHeartRate.text = String(maxHeartRateResult);
+        DataManager.shared.MHR = maxHeartRateResult;
+        
+        let vo2MaxResult = 15.3*maxHeartRateResult/DataManager.shared.restingHeartRate!;
+        self.vo2Max.text = String(vo2MaxResult);
+        DataManager.shared.MAC = vo2MaxResult;
+        
+        let TDEEresult = result*DataManager.shared.activity!.value
+    
+        self.tdee.text = String(TDEEresult);
+        DataManager.shared.TDEE = TDEEresult;
+        // Do any additional setup a
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +58,6 @@ class ResultViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
