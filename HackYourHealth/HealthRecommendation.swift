@@ -8,45 +8,20 @@
 
 import Foundation
 
-public class HealthRecommendation
-{
-    public let healthyValue:Double
-    public let title:String
-    public let summary:String
-    public let higherValueIsUnhealthy:Bool
-    
-    private init(title:String,healthyValue:Double,summary:String,higherValueIsUnhealthy:Bool)
-    {
-        self.title = title
-        self.healthyValue = healthyValue
-        self.summary = summary
-        self.higherValueIsUnhealthy = higherValueIsUnhealthy
+public struct HealthRecommendation {
+    public let title: String
+    public let healthyValue: Double
+    public let summary: String
+    public let higherValueIsUnhealthy: Bool
+
+    ///decides whether to recommend a health improvment
+    func shouldRecommendHealthImprovement(currentHealthValue:Double) -> Bool {
+        return higherValueIsUnhealthy
+            ? healthyValue <= currentHealthValue
+            : healthyValue >= currentHealthValue
     }
-    
-    func shouldRecommendHealthImprovement (currentHealthValue:Double) ->  Bool  //decides whether to recommend a health improvment
-    {
-        if (higherValueIsUnhealthy)
-        {
-            if (healthyValue > currentHealthValue)
-            {
-                return false
-            }
-            else
-            {
-                return true
-            }
-        }
-        else
-        {
-           if (healthyValue < currentHealthValue)
-           {
-             return false
-           }
-           else
-           {
-             return true
-           }
-        }
-    }
-    
+}
+
+extension HealthRecommendation {
+    static let fake = HealthRecommendation(title: "Fake Recommendation", healthyValue: 0, summary: "Lorem Ipsum", higherValueIsUnhealthy: true)
 }
