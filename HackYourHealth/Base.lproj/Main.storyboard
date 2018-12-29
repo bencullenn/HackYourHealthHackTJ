@@ -319,8 +319,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2je-ev-13V">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMR:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwN-Mz-SSr">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basic Metabolic Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwN-Mz-SSr">
+                                                <rect key="frame" x="0.0" y="0.0" width="164.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -479,15 +479,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Improvement Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGn-Cg-a9H">
-                                <rect key="frame" x="118" y="28" width="139" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Improvement Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYf-jN-287">
-                                <rect key="frame" x="16" y="124" width="343" height="419"/>
+                                <rect key="frame" x="20" y="124" width="335" height="535"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -495,11 +488,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="RYf-jN-287" secondAttribute="leading" id="A2e-SX-vHS"/>
-                            <constraint firstItem="RYf-jN-287" firstAttribute="centerY" secondItem="N14-SM-qsa" secondAttribute="centerY" id="GhF-IW-9xd"/>
-                            <constraint firstItem="RYf-jN-287" firstAttribute="centerX" secondItem="N14-SM-qsa" secondAttribute="centerX" id="b9U-nI-h1f"/>
+                            <constraint firstAttribute="trailing" secondItem="RYf-jN-287" secondAttribute="trailing" constant="20" symbolic="YES" id="JK2-65-sDT"/>
+                            <constraint firstItem="0oo-XA-rYS" firstAttribute="top" secondItem="RYf-jN-287" secondAttribute="bottom" constant="8" symbolic="YES" id="K0G-AZ-ghT"/>
                             <constraint firstItem="RYf-jN-287" firstAttribute="top" secondItem="ISH-lE-a22" secondAttribute="bottom" constant="8" id="drz-Eg-E3f"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RYf-jN-287" secondAttribute="trailing" id="y7Q-1U-7uj"/>
+                            <constraint firstItem="RYf-jN-287" firstAttribute="leading" secondItem="N14-SM-qsa" secondAttribute="leading" constant="20" symbolic="YES" id="rof-zZ-ETO"/>
                         </constraints>
                     </view>
                     <connections>
