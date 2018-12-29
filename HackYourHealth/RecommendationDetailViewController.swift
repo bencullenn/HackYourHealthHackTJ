@@ -9,8 +9,11 @@
 import UIKit
 class RecommendationDetailViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
-    var text = ""
+    var text: String!
     override func viewDidLoad() {
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
         label.text = text
     }
 }
