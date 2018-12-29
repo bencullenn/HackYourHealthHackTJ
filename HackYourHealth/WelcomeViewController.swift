@@ -12,26 +12,20 @@ import HealthKit
 class WelcomeViewController: UIViewController {
     let healthKitStore: HKHealthStore = HKHealthStore()
 
-    //MARK:Functions
-    @IBAction func requestHealthPermissions(_ sender: Any)
-    {
-        authorizeHealthKit()
-    }
-
-    func authorizeHealthKit() {
-
+    @IBAction func requestHealthPermissions(_ sender: Any) {
         let identifiers: [HKQuantityTypeIdentifier] = [
-            .bodyMassIndex, .height, .heartRate, .dietaryEnergyConsumed
+            .bodyMassIndex, .height, .bodyMass, .heartRate, .dietaryEnergyConsumed
         ]
-        // State the health data type(s) we want to read from HealthKit.
-        var healthDataToRead: Set<HKObjectType> = Set(identifiers.map { (id) in
+        // State the health data types we want to read from HealthKit.
+        var healthDataToRead = Set<HKObjectType>(identifiers.map { (id) in
             HKObjectType.quantityType(forIdentifier: id)!
         })
         healthDataToRead.insert(HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!)
 
-        // State the health data type(s) we want to write from HealthKit.
-        let healthDataToWrite = Set(identifiers.map { (id) in
-            HKObjectType.quantityType(forIdentifier: id)!
+        // State the health data types we want to write from HealthKit.
+        let healthDataToWrite = Set<HKQuantityType>(identifiers.compactMap { (id) in
+            if id == .heartRate { return nil }
+            return HKObjectType.quantityType(forIdentifier: id)
         })
 
         // Just in case our app makes its way to an iPad...

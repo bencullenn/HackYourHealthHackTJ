@@ -9,12 +9,12 @@
 import UIKit
 
 class RecommendationsTableViewController: UITableViewController {
-    
+
     private var recommendations = [HealthRecommendation]()
     override func viewDidLoad() {
         recommendations = HealthRecommendation.recommended()
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recommendations.count
     }
@@ -24,11 +24,11 @@ class RecommendationsTableViewController: UITableViewController {
         cell.textLabel?.text = recommendations[indexPath.row].title
         return cell
     }
-    
+
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showReco", sender: recommendations[indexPath.row])
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showReco",
             let viewController = segue.destination as? RecommendationDetailViewController,

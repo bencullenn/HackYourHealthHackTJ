@@ -18,13 +18,13 @@ class BasicInfoViewController:UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let age = DataManager.shared.age {
-            ageLabel.text = "\(age)"
+            ageLabel.text = age.formatted
         }
-        if let width = DataManager.shared.weight {
-            weightLabel.text = "\(width)"
+        if let weight = DataManager.shared.weight {
+            weightLabel.text = weight.formatted
         }
         if let height = DataManager.shared.height {
-            heightLabel.text = "\(height)"
+            heightLabel.text = height.formatted
         }
         if let gender = DataManager.shared.gender {
             sexSelection.selectedSegmentIndex = gender.rawValue

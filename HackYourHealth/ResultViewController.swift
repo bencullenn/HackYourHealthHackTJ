@@ -16,38 +16,29 @@ class ResultViewController: UIViewController {
     @IBOutlet var tdee: UILabel!
     @IBOutlet var maxHeartRate: UILabel!
 
-    static let formatter: NumberFormatter = {
-        let f = NumberFormatter()
-        f.maximumFractionDigits = 2
-        return f
-    }()
-
-    func format(_ number: Double) -> String {
-        return ResultViewController.formatter.string(from: number as NSNumber) ?? "\(number)"
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let bmr = DataManager.shared.BMR {
-            self.bmr.text = format(bmr)
+            self.bmr.text = bmr.formatted
         }
 
         if let maxHeartRateResult = DataManager.shared.MHR {
-            self.maxHeartRate.text = format(maxHeartRateResult)
+            self.maxHeartRate.text = maxHeartRateResult.formatted
         }
 
         if let vo2MaxResult = DataManager.shared.MAC {
-            self.vo2Max.text = format(vo2MaxResult)
+            self.vo2Max.text = vo2MaxResult.formatted
         }
 
         if let tdeeResult = DataManager.shared.TDEE {
-            self.tdee.text = format(tdeeResult)
+            self.tdee.text = tdeeResult.formatted
         }
 
         if let bmiResult = DataManager.shared.BMI {
-            self.bmi.text = format(bmiResult)
+            self.bmi.text = bmiResult.formatted
         }
+
         DataManager.shared.push()
     }
 }

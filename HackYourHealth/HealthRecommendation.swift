@@ -6,34 +6,31 @@
 //  Copyright © 2017 Ben Cullen. All rights reserved.
 //
 
-import Foundation
-
 public struct HealthRecommendation {
     public let title: String
     public let healthyValue: Double
     public let summary: String
     public let higherValueIsUnhealthy: Bool
-    public let selector: () -> Double?
+    public let currentValue: () -> Double?
 
-    ///decides whether to recommend a health improvment
-    func shouldRecommendHealthImprovement(currentHealthValue: Double) -> Bool {
+    /// Decides whether to recommend a health improvment.
+    func shouldRecommendHealthImprovement(for currentHealthValue: Double) -> Bool {
         return higherValueIsUnhealthy
             ? healthyValue <= currentHealthValue
             : healthyValue >= currentHealthValue
     }
 }
 
-extension HealthRecommendation {
+extension HealthRecommendation: CaseIterable {
     static func recommended() -> [HealthRecommendation] {
-        return HealthRecommendation.all.filter { (recommendation) -> Bool in
-            if let currentHealthValue = recommendation.selector() {
-                return recommendation.shouldRecommendHealthImprovement(currentHealthValue: currentHealthValue)
-            } else {
-                return false
-            }
+        return HealthRecommendation.allCases.filter { (recommendation) in
+            guard let value = recommendation.currentValue()
+                else { return false }
+            return recommendation.shouldRecommendHealthImprovement(for: value)
         }
     }
-    static let all: [HealthRecommendation] = [.lowRestingHeartRate,.highRestingHeartRate,.lowActivityFactor,.lowCaloricIntake,.highCaloricIntake,.lowBMI,.highBMI]
+
+    public static let allCases: [HealthRecommendation] = [.lowRestingHeartRate,.highRestingHeartRate,.lowActivityFactor,.lowCaloricIntake,.highCaloricIntake,.lowBMI,.highBMI]
 
     static let lowRestingHeartRate = HealthRecommendation (title:"Extremly Low Resting Heart Rate", healthyValue: 50, summary:"Your resting heart rate is less than 50 BPM. This is unnaturually low and it is recommended that you seek a docotor", higherValueIsUnhealthy: false) { DataManager.shared.restingHeartRate }
 

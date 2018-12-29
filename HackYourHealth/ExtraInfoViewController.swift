@@ -28,8 +28,12 @@ class ExtraInfoViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        DataManager.shared.restingHeartRate = Double(restingHeartRateField.text!)
-        DataManager.shared.calorieIntake = Double(calorieIntakeField.text!)
+        if let restingHeartRate = restingHeartRateField.text {
+            DataManager.shared.restingHeartRate = Double(restingHeartRate)
+        }
+        if let calorieIntake = calorieIntakeField.text {
+            DataManager.shared.calorieIntake = Double(calorieIntake)
+        }
         DataManager.shared.activity = Activity(rawValue: activitySelector.selectedSegmentIndex)
     }
 }
