@@ -21,6 +21,7 @@ class ResultViewController: UIViewController {
         f.maximumFractionDigits = 2
         return f
     }()
+
     func format(_ number: Double) -> String {
         return ResultViewController.formatter.string(from: number as NSNumber) ?? "\(number)"
     }
@@ -49,5 +50,4 @@ class ResultViewController: UIViewController {
         }
         DataManager.shared.push()
     }
-    
 }

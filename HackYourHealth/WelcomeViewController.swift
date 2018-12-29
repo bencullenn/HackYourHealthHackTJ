@@ -24,15 +24,18 @@ class WelcomeViewController: UIViewController {
             .bodyMassIndex, .height, .heartRate, .dietaryEnergyConsumed
         ]
         // State the health data type(s) we want to read from HealthKit.
-        var healthDataToRead: Set<HKObjectType> = Set(identifiers.map {(id) in HKObjectType.quantityType(forIdentifier: id)!})
+        var healthDataToRead: Set<HKObjectType> = Set(identifiers.map { (id) in
+            HKObjectType.quantityType(forIdentifier: id)!
+        })
         healthDataToRead.insert(HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!)
 
         // State the health data type(s) we want to write from HealthKit.
-        let healthDataToWrite = Set(identifiers.map {(id) in HKObjectType.quantityType(forIdentifier: id)!})
+        let healthDataToWrite = Set(identifiers.map { (id) in
+            HKObjectType.quantityType(forIdentifier: id)!
+        })
 
-        // Just in case OneHourWalker makes its way to an iPad...
-        if !HKHealthStore.isHealthDataAvailable()
-        {
+        // Just in case our app makes its way to an iPad...
+        if !HKHealthStore.isHealthDataAvailable() {
             print("Can't access HealthKit.")
         }
 
@@ -40,10 +43,8 @@ class WelcomeViewController: UIViewController {
         healthKitStore.requestAuthorization(toShare: healthDataToWrite, read: healthDataToRead)
         { (success, error) in
             if !success {
-                print("You didn't allow HealthKit to access these read/write data types. In your app, try to handle this error gracefully when a user decides not to provide access. The error was: \(error). If you're using a simulator, try it on a device.")
-            }
-            else
-            {
+                print("You didn't allow HealthKit to access these read/write data types. In your app, try to handle this error gracefully when a user decides not to provide access. The error was: \(error!). If you're using a simulator, try it on a device.")
+            } else {
                 DataManager.shared.pull()
             }
             DispatchQueue.main.sync { [weak self] in

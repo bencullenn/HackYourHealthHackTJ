@@ -19,10 +19,8 @@ class RecommendationsTableViewController: UITableViewController {
         return recommendations.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = recommendations[indexPath.row].title
         return cell
     }
@@ -31,9 +29,10 @@ class RecommendationsTableViewController: UITableViewController {
         performSegue(withIdentifier: "showReco", sender: recommendations[indexPath.row])
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showReco", let viewController = segue.destination as? RecommendationDetailViewController, let recommendation = sender as? HealthRecommendation{
+        if segue.identifier == "showReco",
+            let viewController = segue.destination as? RecommendationDetailViewController,
+            let recommendation = sender as? HealthRecommendation {
             viewController.title = recommendation.title
             viewController.text = recommendation.summary
         }

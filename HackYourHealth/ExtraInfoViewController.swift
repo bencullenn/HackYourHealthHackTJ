@@ -25,7 +25,6 @@ class ExtraInfoViewController: UIViewController {
         if let activity = DataManager.shared.activity {
             activitySelector.selectedSegmentIndex = activity.rawValue
         }
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
